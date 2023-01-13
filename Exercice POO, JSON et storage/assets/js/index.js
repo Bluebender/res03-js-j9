@@ -6,10 +6,13 @@ import { PasswordField } from './classes/passwordField.js';
 
 
 window.addEventListener("DOMContentLoaded", function(){
-
+    
+    // Création tableau de tous les inputs
     let inputs = document.querySelectorAll("input");
     
+    // Création du firstname avec le texte du champ 1
     let firstname = new TextField(inputs[0]);
+    // Ajout de de la valeur name (du html) au paramètre name de l'objet
     firstname.name = inputs[0].getAttribute("name");
     let lastname = new TextField(inputs[1]);
     lastname.name = inputs[1].getAttribute("name");
@@ -30,9 +33,18 @@ window.addEventListener("DOMContentLoaded", function(){
     form1.addField(confirmPassword);
     
     let userInformationForm = document.getElementById("user-information");
-    userInformationForm.addEventListener("submit", function(envent){
-        console.log("coucou") 
+    userInformationForm.addEventListener("submit", function(event){
         event.preventDefault();
         form1.submit();
     });
+    
+    for (let i=0; i<inputs.length; i++){
+        inputs[i].addEventListener("change", function(){
+            form1.validate();
+        });
+    }
+        console.log(form1);
+
+    
+    
 });

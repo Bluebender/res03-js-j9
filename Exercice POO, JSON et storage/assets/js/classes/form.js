@@ -21,7 +21,11 @@ class Form {
         
     }
     validate(){
-        
+        for (let i=0; i<this.#fields.length; i++){
+            this.#fields[i].validate();
+            console.log("On lance le validate du form1")
+
+        }
     }
     toJSON(){
         
