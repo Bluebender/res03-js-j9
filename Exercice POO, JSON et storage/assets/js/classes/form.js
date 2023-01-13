@@ -4,7 +4,6 @@ class Form {
 
     constructor() {
         this.#fields = [];
-        this.#submitted = submitted;
     }
     get fields() {
         return this.#fields;
@@ -16,7 +15,7 @@ class Form {
         this.#submitted = submitted;
     }
     addField(field){
-        
+        this.#fields.push(field);
     }
     submit(){
         

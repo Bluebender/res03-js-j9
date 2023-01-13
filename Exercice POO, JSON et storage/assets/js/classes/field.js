@@ -19,8 +19,8 @@ class Field {
     set errors(element) {
         this.#element = errors;
     }
-    get errors() {
-        return this.#errors;
+    get name() {
+        return this.#name;
     }
     set name(name) {
         this.#name = name;

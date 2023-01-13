@@ -1,13 +1,18 @@
-import { Field } from './classes/field.js';
+import { Field } from './field.js';
 
 class TextField extends Field {
 
     constructor(element) {
         super(element);
     }
-    validate() {
-        
-    }
+    // validate() {
+    //     if (this.#element === ""){
+    //         element.classList.add("nok")
+    //     }
+    //     else{
+    //         element.classList.add("ok")
+    //     }
+    // }
 }
 
 export { TextField };

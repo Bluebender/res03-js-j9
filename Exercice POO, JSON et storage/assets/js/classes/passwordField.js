@@ -1,4 +1,4 @@
-import { Field } from './classes/field.js';
+import { Field } from './field.js';
 
 class PasswordField extends Field {
 
