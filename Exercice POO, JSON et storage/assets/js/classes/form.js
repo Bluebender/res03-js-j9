@@ -18,13 +18,28 @@ class Form {
         this.#fields.push(field);
     }
     submit(){
-        
+        // let retour = JSON.stringify(this);
+        // sessionStorage.setItem("form", "form1");
     }
     validate(){
+        let flag = false;
         for (let i=0; i<this.#fields.length; i++){
             this.#fields[i].validate();
-            console.log("On lance le validate du form1")
-
+            if (this.#fields[i].errors !== ""){
+                flag = true;
+            }
+            let button = document.querySelector("button");
+            
+            if (flag === true){
+                button.classList.add("disabled");
+                button.disabled = true;
+                
+            }
+            else{
+                console.log("On valdide")
+                button.classList.remove("disabled");
+                button.disabled = false;
+            }
         }
     }
     toJSON(){

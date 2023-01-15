@@ -6,18 +6,17 @@ class TextField extends Field {
         super(element);
     }
     validate() {
-        if (this.element.name = ""){
+        this.errors = [];
+
+        if (this.element.value.length === 0){
+            this.element.classList.remove("ok");
             this.element.classList.add("nok");
-            this.errors = "Le champ ${this.#name} ne peut pas être vide";
-            console.log("add nok to text")
-            console.log(this.element)
-            
+            this.errors = `Le champ ${this.name} ne peut pas être vide`;
         }
         else{
+            this.element.classList.remove("nok");
             this.element.classList.add("ok");
-                        console.log("add ok to text")
-            console.log(this.element)
-
+            this.errors = "";
         }
     }
 }

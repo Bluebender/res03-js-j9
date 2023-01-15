@@ -40,10 +40,12 @@ window.addEventListener("DOMContentLoaded", function(){
     
     for (let i=0; i<inputs.length; i++){
         inputs[i].addEventListener("change", function(){
+                        console.log(form1);
+
             form1.validate();
+            
         });
     }
-        console.log(form1);
 
     
     
